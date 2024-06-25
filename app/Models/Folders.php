@@ -20,5 +20,12 @@ class Folders extends Model
     ];
 
     public $timestamps = true;
+
+    // relacion con el modelo Flows 
+    
+    public function flows()
+    {
+        return $this->hasMany(Flows::class, 'folder_uuid', 'uuid');
+    }
     
 }
